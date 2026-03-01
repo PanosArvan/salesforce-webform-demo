@@ -1,46 +1,105 @@
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
-<!--  If necessary, please modify the charset parameter to specify the        -->
-<!--  character set of your HTML page.                                        -->
-<!--  ----------------------------------------------------------------------  -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<title>Device Sell Form</title>
 
-<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <FORM> element to your page.             -->
-<!--  ----------------------------------------------------------------------  -->
+    .form-container {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        width: 400px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-top: 12px;
+        font-weight: bold;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: #0176d3;
+        color: white;
+        border: none;
+        margin-top: 20px;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #015bb5;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="form-container">
+<h2>Sell Your Device</h2>
 
 <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dfj00000Honsl" method="POST">
 
-<input type=hidden name="oid" value="00Dfj00000Honsl">
-<input type=hidden name="retURL" value="">
+<input type="hidden" name="oid" value="00Dfj00000Honsl">
+<input type="hidden" name="retURL" value="https://yourusername.github.io/salesforce-webform-demo/thankyou.html">
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-<!--  these lines if you wish to test in debug mode.                          -->
-<!--  <input type="hidden" name="debug" value=1>                              -->
-<!--  <input type="hidden" name="debugEmail"                                  -->
-<!--  value="panagiotisarvanitakis@gmail.com">                                -->
-<!--  ----------------------------------------------------------------------  -->
+<label for="first_name">First Name</label>
+<input id="first_name" maxlength="40" name="first_name" type="text" required>
 
-<label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
+<label for="last_name">Last Name</label>
+<input id="last_name" maxlength="80" name="last_name" type="text" required>
 
-<label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
+<label for="email">Email</label>
+<input id="email" maxlength="80" name="email" type="email" required>
 
-<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+<label for="phone">Phone</label>
+<input id="phone" maxlength="40" name="phone" type="text">
 
-<label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+<label for="city">City</label>
+<input id="city" maxlength="40" name="city" type="text">
 
-<label for="city">City</label><input  id="city" maxlength="40" name="city" size="20" type="text" /><br>
+<label>Device Model</label>
+<input id="00Nfj00003ALoQj" maxlength="100" name="00Nfj00003ALoQj" type="text">
 
-Device Model:<input  id="00Nfj00003ALoQj" maxlength="100" name="00Nfj00003ALoQj" size="20" type="text" /><br>
+<label>Device Condition</label>
+<select id="00Nfj00003ALXwA" name="00Nfj00003ALXwA">
+    <option value="">--Select--</option>
+    <option value="Excellent">Excellent</option>
+    <option value="Good">Good</option>
+    <option value="Fair">Fair</option>
+    <option value="Poor">Poor</option>
+</select>
 
-Device Condition:<select  id="00Nfj00003ALXwA" name="00Nfj00003ALXwA" title="Device Condition"><option value="">--None--</option><option value="Excellent">Excellent</option>
-<option value="Good">Good</option>
-<option value="Fair">Fair</option>
-<option value="Poor">Poor</option>
-</select><br>
-
-<input type="submit" name="submit">
+<input type="submit" value="Submit Offer">
 
 </form>
+</div>
+
+</body>
+</html>
